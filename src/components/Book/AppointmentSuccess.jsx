@@ -156,12 +156,14 @@ function AppointmentSuccess() {
                     {String(appointmentData.appointmentDate)}
                   </p>
                 </div>
-                <div className="rounded-md bg-dark-gray p-2 mt-1">
-                  <p className="text-lg">
-                    <strong>Appointment Time:</strong>{" "}
-                    {appointmentData.appointmentTime}
-                  </p>
-                </div>
+                {appointmentData.appointmentTime && (
+                  <div className="rounded-md bg-dark-gray p-2 mt-1">
+                    <p className="text-lg">
+                      <strong>Appointment Time:</strong>{" "}
+                      {appointmentData.appointmentTime}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <div className="mt-6">
@@ -217,10 +219,11 @@ function AppointmentSuccess() {
           bordered={true}
           style={{ width: 350 }}
           className="drop-shadow-md mt-20"
+          headStyle={{ textAlign: 'center' }}
         >
           <div>
-            <div>
-              <h1>Phone: {phone}</h1>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h1 style={{ marginBottom: '20px' }}>Phone: {phone}</h1>
             </div>
             <Form>
               <Form.Item
@@ -239,18 +242,31 @@ function AppointmentSuccess() {
                 />
               </Form.Item>
               <Form.Item>
+              <div style={{ marginBottom: '10px' }}>
                 <Button
                   onClick={onSendCode}
                   disabled={!phoneNumber || codeSent}
+                  className="w-full bg-green-600 hover:bg-green-700 hover:text-white"
                 >
                   Send Code
                 </Button>
+              </div>
                 <Spin spinning={verifying}>
-                  <Button onClick={onVerifyCode} disabled={!verificationCode}>
+                <div style={{ marginBottom: '10px' }}>
+                  <Button 
+                    onClick={onVerifyCode} 
+                    disabled={!verificationCode}
+                    className="w-full bg-green-500 hover:bg-green-700 hover:text-white"
+                  >
                     Verify Code
                   </Button>
+                </div>
                 </Spin>
-                <Button onClick={createPatientCollection} disabled={!register}>
+                <Button 
+                  onClick={createPatientCollection} 
+                  disabled={!register}
+                  className="w-full bg-green-500 hover:bg-green-700 hover:text-white"
+                  >
                   Register
                 </Button>
               </Form.Item>

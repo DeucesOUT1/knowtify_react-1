@@ -75,11 +75,20 @@ function RegisterPhone() {
                 onChange={(e) => setVerificationCode(e.target.value)}
               />
             </Form.Item>
-            <Form.Item>
-              <Button onClick={onSendCode} disabled={!phoneNumber || codeSent}>
+             <Form.Item style={{ display: "flex", justifyContent: "space-evenly" }}>
+              <Button
+                onClick={onSendCode}
+                disabled={!phoneNumber || codeSent}
+                className="hover:bg-green-700"
+                style={{ marginRight: 40 }}
+              >
                 Send Code
               </Button>
-              <Button onClick={onVerifyCode} disabled={!verificationCode}>
+              <Button
+                onClick={onVerifyCode}
+                disabled={!verificationCode}
+                className="hover:bg-green-700"
+              >
                 Verify Code
               </Button>
             </Form.Item>

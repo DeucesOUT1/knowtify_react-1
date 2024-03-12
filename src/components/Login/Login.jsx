@@ -192,6 +192,15 @@ const Login = () => {
             </Form.Item>
           </Form>
 
+          <div className="text-center mt-2">
+            <Link to="/registerphone">
+              <Button type="primary"
+                      className="bg-green-600 w-full">
+                Patient Login
+              </Button>
+            </Link>
+          </div>
+
           <h3 className="w-full text-center">
             Don't have an account? <Space />
             <Link to="/register">Sign Up</Link>
@@ -206,14 +215,7 @@ const Login = () => {
             </Button>
           </div>
 
-          <div className="text-center mt-2">
-            <Link to="/registerphone">
-              <Button type="link" className="bg-green-600 w-full">
-                Patient Login
-              </Button>
-            </Link>
-          </div>
-
+         
           <Modal
             title="Forgot Password"
             open={forgotPasswordModalVisible}
