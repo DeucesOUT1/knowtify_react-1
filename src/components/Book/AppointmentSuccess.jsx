@@ -156,7 +156,7 @@ function AppointmentSuccess() {
                     {String(appointmentData.appointmentDate)}
                   </p>
                 </div>
-                {appointmentData.appointmentTime && (
+``                {appointmentData.appointmentTime && (
                   <div className="rounded-md bg-dark-gray p-2 mt-1">
                     <p className="text-lg">
                       <strong>Appointment Time:</strong>{" "}
